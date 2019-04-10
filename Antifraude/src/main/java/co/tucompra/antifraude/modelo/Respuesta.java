@@ -10,5 +10,30 @@ public class Respuesta implements java.io.Serializable {
 
     public Respuesta() {
     }
+    
+    String mensaje;
+	Integer score;
+	
+	public Respuesta(String mensaje, Integer score) {
+		super();
+		this.mensaje = mensaje;
+		this.score = score;
+	}
+	public String getMensaje() {
+		return mensaje;
+	}
+	public void setMensaje(String mensaje) {
+		this.mensaje = mensaje;
+	}
+	public Integer getScore() {
+		return score;
+	}
+	public void setScore(Integer score) {
+		this.score = score;
+	}
+	@Override
+	public String toString() {
+		return "Respuesta [mensaje=" + mensaje + ", score=" + score + "]";
+	}
 
 }
