@@ -10,5 +10,145 @@ public class Ip implements java.io.Serializable {
 
     public Ip() {
     }
+    
+	String paisIp;
+	String configuracionPaises;
+	String validarPais;
+	String mensaje;
+	Integer nivel;
+	Integer score;
+	Integer cantidadIntentos;
+	Integer cantidadIntentosRegla;
+	boolean validarCantidadIntentos;
+	String listaBlancaIps;
+	String direccionIp;
+	String validarIp;
+	boolean esProxy;
+	boolean aceptaProxy;
+	
+	public String getPaisIp() {
+		return paisIp;
+	}
+	public void setPaisIp(String paisIp) {
+		this.paisIp = paisIp;
+	}
+	public String getConfiguracionPaises() {
+		return configuracionPaises;
+	}
+	public void setConfiguracionPaises(String configuracionPaises) {
+		this.configuracionPaises = configuracionPaises;
+	}
+	public String getValidarPais() {
+		try {
+			
+			if(paisIp==null||paisIp.equals("")){
+				validarPais="false";
+				return validarPais;
+			}
+			
+			if(configuracionPaises.toLowerCase().contains(paisIp.toLowerCase())){
+				validarPais="true";
+			}else{
+				validarPais="false";
+			}
+		} catch (Exception e) {
+			System.out.println("error");
+		}
+
+		return validarPais;
+	}
+	public void setValidarPais(String validarPais) {
+		this.validarPais = validarPais;
+	}
+	public String getMensaje() {
+		return mensaje;
+	}
+	public void setMensaje(String mensaje) {
+		this.mensaje = mensaje;
+	}
+	public Integer getNivel() {
+		return nivel;
+	}
+	public void setNivel(Integer nivel) {
+		this.nivel = nivel;
+	}
+	public Integer getScore() {
+		return score;
+	}
+	public void setScore(Integer score) {
+		this.score = score;
+	}
+	public boolean isValidarCantidadIntentos() {
+
+		if(cantidadIntentos!=null&&cantidadIntentosRegla!=null){
+			if(cantidadIntentos<cantidadIntentosRegla){
+				validarCantidadIntentos=true;
+			}else{
+				validarCantidadIntentos=false;
+			}
+		}
+		
+		return validarCantidadIntentos;
+	}
+	public void setValidarCantidadIntentos(boolean validarCantidadIntentos) {
+		this.validarCantidadIntentos = validarCantidadIntentos;
+	}
+	public Integer getCantidadIntentos() {
+		return cantidadIntentos;
+	}
+	public void setCantidadIntentos(Integer cantidadIntentos) {
+		this.cantidadIntentos = cantidadIntentos;
+	}
+	public Integer getCantidadIntentosRegla() {
+		return cantidadIntentosRegla;
+	}
+	public void setCantidadIntentosRegla(Integer cantidadIntentosRegla) {
+		this.cantidadIntentosRegla = cantidadIntentosRegla;
+	}
+	public String getListaBlancaIps() {
+		return listaBlancaIps;
+	}
+	public void setListaBlancaIps(String listaBlancaIps) {
+		this.listaBlancaIps = listaBlancaIps;
+	}
+	public String getDireccionIp() {
+		return direccionIp;
+	}
+	public void setDireccionIp(String direccionIp) {
+		this.direccionIp = direccionIp;
+	}
+	public String getValidarIp() {
+		try {
+			
+			if(direccionIp==null||direccionIp.equals("")){
+				validarIp="false";
+				return validarIp;
+			}
+			
+			if(listaBlancaIps.toLowerCase().contains(direccionIp.toLowerCase())){
+				validarIp="true";
+			}else{
+				validarIp="false";
+			}
+		} catch (Exception e) {
+			
+		}
+		return validarIp;
+	}
+	public void setValidarIp(String validarIp) {
+		this.validarIp = validarIp;
+	}
+	public boolean isEsProxy() {
+		return esProxy;
+	}
+	public void setEsProxy(boolean esProxy) {
+		this.esProxy = esProxy;
+	}
+	public boolean isAceptaProxy() {
+		return aceptaProxy;
+	}
+	public void setAceptaProxy(boolean aceptaProxy) {
+		this.aceptaProxy = aceptaProxy;
+	}    
 
 }
